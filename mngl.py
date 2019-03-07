@@ -46,7 +46,7 @@ class MNGL(object):
 
 
 def main():
-    mngl = MNGL(bp_no=50095766)
+    mngl = MNGL(bp_no=123456)
     billdetails = mngl.get_bill_details()
     print(billdetails)
 
