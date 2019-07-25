@@ -18,7 +18,7 @@ class MNGL(object):
         try :
             response = requests.post(url,headers=headers, data=data,timeout=10)
             if response.status_code == 200:
-                soup = BeautifulSoup(response.text,"lxml")
+                soup = BeautifulSoup(response.text,"html.parser")
              
                 billdetails['customer_name'] = soup.find('input', {'name': 'customer_name'}).get('value')
                 billdetails['customer_id']  = soup.find('input', {'name': 'customer_id'}).get('value')
@@ -46,7 +46,7 @@ class MNGL(object):
 
 
 def main():
-    mngl = MNGL(bp_no=123456)
+    mngl = MNGL(bp_no=50095766)
     billdetails = mngl.get_bill_details()
     print(billdetails)
 
